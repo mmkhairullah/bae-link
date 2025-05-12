@@ -30,18 +30,21 @@ export const Navigation = (props) => {
                 COLLECTION
               </a>
               <ul className="submenu">
-                <li><a href="#portfolio" className="page-scroll">GALLERY</a></li>
-                <li><a href="#testimonials" className="page-scroll">TESTIMONIALS</a></li>
+                <li><a href="#portfolio" className="page-scroll">COLLECTION</a></li>
+                <li><a href="#portfolio" className="page-scroll">PROMOTION</a></li>
+                <li><a href="#testimonials" className="page-scroll">CLEARANCE</a></li>
               </ul>
             </li>
             {/* Group 2 */}
             <li className="menu-item">
-              <a href="#services" className="page-scroll">
+              <a href="#lecreuset" className="page-scroll">
                 BRANDS
               </a>
               <ul className="submenu">
-                <li><a href="#consulting">Consulting</a></li>
-                <li><a href="#design">Design</a></li>
+                <li><a href="#lecreuset">LE CREUSET</a></li>
+                <li><a href="#portmeirion">PORTMEIRION</a></li>
+                <li><a href="#smeg">SMEG</a></li>
+                <li><a href="#smeg">STAUB</a></li>
               </ul>
             </li>
             {/* Group 3 */}
@@ -53,6 +56,7 @@ export const Navigation = (props) => {
                 <li><a href="#about" className="page-scroll">ABOUT</a></li>
                 <li><a href="#team" className="page-scroll">TEAM</a></li>
                 <li><a href="#contact" className="page-scroll">CONTACT</a></li>
+                <li><a href="#contact" className="page-scroll">REVIEW</a></li>
               </ul>
             </li>
           </ul>

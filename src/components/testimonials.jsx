@@ -8,22 +8,35 @@ export const Testimonials = (props) => {
           <h2>What our clients say</h2>
         </div>
         <div className="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4">
-                  <div className="testimonial">
-                    <div className="testimonial-image">
-                      {" "}
-                      <img src={d.img} alt="" />{" "}
-                    </div>
-                    <div className="testimonial-content">
-                      <p>"{d.text}"</p>
-                      <div className="testimonial-meta"> - {d.name} </div>
+        {props.data ? (
+            props.data.map((d, i) => (
+              <div key={`${d.name}-${i}`} className="col-md-4">
+                <div className="testimonial">
+                  <div className="testimonial-content">
+                    <p>"{d.text}"</p>
+                    <div className="testimonial-meta">
+                      <div>{d.name}</div>
+                      <div className="testimonial-thumbnail">
+                      {/* <ImageGallery
+                      items={Array.isArray(d.images) ? d.images : []}
+                      showThumbnails={true}
+                      showFullscreenButton={true}
+                      showPlayButton={false}
+                      slideDuration={450}
+                      stopPropagation={true}
+                      thumbnailPosition="bottom"
+                      autoPlay={true}
+                      slideInterval={3000}
+                    /> */}
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))
-            : "loading"}
+              </div>
+            ))
+          ) : (
+            'loading'
+          )}
         </div>
       </div>
     </div>
