@@ -1,7 +1,29 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-export const Navigation = (props) => {
+export const Navigation = (props) => { 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
+  const scrollLink = (href, label) => (
+    isHome ? (
+      <a href={href} className="page-scroll">{label}</a>
+    ) : (
+      <Link to={`/#${href.replace("#", "")}`} className="page-scroll">{label}</Link>
+    )
+  );
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -12,51 +34,46 @@ export const Navigation = (props) => {
             data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1"
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
           </button>
-          <a className="navbar-brand page-scroll" href="#page-top">
+           {/* BAE LINK: force scroll to top if on homepage */}
+           <a href="/" className="navbar-brand page-scroll" onClick={handleHomeClick}>
             BAE LINK
-          </a>{" "}
+          </a>
         </div>
+
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav navbar-right">
             {/* Group 1 */}
             <li className="menu-item">
-              <a href="#features" className="page-scroll">
-                COLLECTION
-              </a>
+              {scrollLink("#features", "COLLECTION")}
               <ul className="submenu">
-                <li><a href="#portfolio" className="page-scroll">COLLECTION</a></li>
-                <li><a href="#portfolio" className="page-scroll">PROMOTION</a></li>
-                <li><a href="#testimonials" className="page-scroll">CLEARANCE</a></li>
+                <li>{scrollLink("#portfolio", "COLLECTION")}</li>
+                <li>{scrollLink("#portfolio", "PROMOTION")}</li>
+                <li>{scrollLink("#testimonials", "CLEARANCE")}</li>
               </ul>
             </li>
             {/* Group 2 */}
             <li className="menu-item">
-              <a href="#lecreuset" className="page-scroll">
-                BRANDS
-              </a>
+              {scrollLink("#lecreuset", "BRANDS")}
               <ul className="submenu">
-                <li><a href="#lecreuset">LE CREUSET</a></li>
-                <li><a href="#portmeirion">PORTMEIRION</a></li>
-                <li><a href="#smeg">SMEG</a></li>
-                <li><a href="#smeg">STAUB</a></li>
+                <li>{scrollLink("#lecreuset", "LE CREUSET")}</li>
+                <li>{scrollLink("#portmeirion", "PORTMEIRION")}</li>
+                <li>{scrollLink("#smeg", "SMEG")}</li>
+                <li>{scrollLink("#smeg", "STAUB")}</li>
               </ul>
             </li>
             {/* Group 3 */}
             <li className="menu-item">
-              <a href="#about" className="page-scroll">
-                DISCOVER
-              </a>
+              {scrollLink("#discovery", "DISCOVER")}
               <ul className="submenu">
-                <li><a href="#about" className="page-scroll">ABOUT</a></li>
-                <li><a href="#team" className="page-scroll">TEAM</a></li>
-                <li><a href="#contact" className="page-scroll">CONTACT</a></li>
-                <li><a href="#contact" className="page-scroll">REVIEW</a></li>
+                <li><Link to="/discovery">ABOUT</Link></li>
+                <li>{scrollLink("#team", "TEAM")}</li>
+                <li>{scrollLink("#contact", "CONTACT")}</li>
+                <li>{scrollLink("#contact", "REVIEW")}</li>
               </ul>
             </li>
           </ul>

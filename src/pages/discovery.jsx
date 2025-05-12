@@ -1,8 +1,11 @@
 import React from "react";
+import { Navigation } from "../components/navigation";
 
-export const AboutX = (props) => {
+export const Discovery = (props) => {
   return (
-    <div id="aboutX">
+    <div id="discovery">
+      <Navigation data={props.data?.Navigation} />
+      
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-md-6">
