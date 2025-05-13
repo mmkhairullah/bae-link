@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Nav } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+
 
 export const Navigation = (props) => { 
   const location = useLocation();
@@ -24,6 +25,17 @@ export const Navigation = (props) => {
     )
   );
 
+  const isActive = (path) => {
+    // Match path or full path + hash
+    return location.pathname === path || location.pathname + location.hash === path;
+  };
+
+  useEffect(() => {
+    // This ensures re-render on hash change
+  }, [location.hash]);
+  
+  
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -41,7 +53,7 @@ export const Navigation = (props) => {
           </button>
            {/* BAE LINK: force scroll to top if on homepage */}
            <a href="/" className="navbar-brand page-scroll" onClick={handleHomeClick}>
-            BAE LINK
+            THE WHOLE STORY
           </a>
         </div>
 
@@ -49,31 +61,78 @@ export const Navigation = (props) => {
           <ul className="nav navbar-nav navbar-right">
             {/* Group 1 */}
             <li className="menu-item">
-              {scrollLink("#features", "COLLECTION")}
+              {scrollLink("#promotion", "SPECIAL")}
               <ul className="submenu">
-                <li>{scrollLink("#portfolio", "COLLECTION")}</li>
-                <li>{scrollLink("#portfolio", "PROMOTION")}</li>
-                <li>{scrollLink("#testimonials", "CLEARANCE")}</li>
+                <li>{scrollLink("#promotion", "PROMOTION")}</li>
+                <li>{scrollLink("#poster", "CLEARANCE")}</li>
+                <li>{scrollLink("#gallery", "GALLERY")}</li>
               </ul>
             </li>
             {/* Group 2 */}
-            <li className="menu-item">
-              {scrollLink("#lecreuset", "BRANDS")}
+            <li className={`menu-item ${isActive("/brands") || location.pathname.startsWith("/brands") ? "active" : ""}`}>
+              <Link to="/brands">BRANDS</Link>
               <ul className="submenu">
-                <li>{scrollLink("#lecreuset", "LE CREUSET")}</li>
-                <li>{scrollLink("#portmeirion", "PORTMEIRION")}</li>
-                <li>{scrollLink("#smeg", "SMEG")}</li>
-                <li>{scrollLink("#smeg", "STAUB")}</li>
+                <li>
+                  <a href="/brands#portmeirion" onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/brands#portmeirion");
+                    }}> PORTMEIRION
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/brands#lecreuset"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/brands#lecreuset");
+                    }}
+                  >
+                    LE CREUSET
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/brands#smeg"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/brands#smeg");
+                    }}
+                  >
+                    SMEG
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/brands#staub"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/brands#staub");
+                    }}
+                  >
+                    STAUB
+                  </a>
+                </li>
               </ul>
             </li>
             {/* Group 3 */}
-            <li className="menu-item">
-              {scrollLink("#discovery", "DISCOVER")}
+            <li className={`menu-item ${isActive("/discovery") ? "active" : ""}`}>
+              <Link to="/discovery">DISCOVERY</Link>
               <ul className="submenu">
-                <li><Link to="/discovery">ABOUT</Link></li>
-                <li>{scrollLink("#team", "TEAM")}</li>
-                <li>{scrollLink("#contact", "CONTACT")}</li>
-                <li>{scrollLink("#contact", "REVIEW")}</li>
+              <li>
+                  <a href="/discovery#review" onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/discovery#review");
+                    }}> REVIEW
+                  </a>
+                </li>
+                <li>
+                  <a href="/discovery" onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/discovery#about");
+                    }}> ABOUT
+                  </a>
+                </li>
+                {/* <li>{scrollLink("#contact", "REVIEW")}</li> */}
               </ul>
             </li>
           </ul>

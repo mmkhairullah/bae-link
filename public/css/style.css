@@ -265,7 +265,7 @@ header .intro-text {
 }
 /* About Section */
 #about {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 #about h3 {
   font-size: 22px;
@@ -404,8 +404,8 @@ header .intro-text {
 }
 /* Testimonials Section */
 #testimonials {
-  padding: 100px 0;
-  background: #f6f6f6;
+  padding: 60px 0;
+  background: rgb(231, 233, 241);
 }
 #testimonials i {
   color: #e6e6e6;
@@ -463,8 +463,9 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  color: rgba(255, 255, 255, 0.75);
+  /* background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); */
+  background: rgb(231, 233, 241);
+  color: rgb(7, 7, 8); 
 }
 #contact .section-title {
   margin-bottom: 40px;
@@ -679,23 +680,103 @@ label {
 }
 
 /* poster */
-/* Big image styling */
-.big-image img {
-  width: 100%;  /* Make sure the big image takes full width */
-  height: 70%;
-  display: block;
-  border-radius: 15px;  /* Optional: rounded corners for a cleaner look */
-  margin: 5px;
+.poster-image-wrapper {
+  height: 600px; /* Adjust height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 40px 20px 40px;
 }
 
-/* Small image styling */
-.small-image img {
-  width: 100%;  /* Ensure the small image fits within its container */
-  height: 70%;
-  display: block;
-  border-radius: 15px;  /* Optional: rounded corners for a smoother look */
-  margin: 5px;
+.poster-image-wrapper img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
+
+.poster-section {
+  background: #f8f8f8;
+  padding: 60px 0;
+}
+
+.poster-card {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  background: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+.poster-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.poster-card:hover img {
+  transform: scale(1.05);
+}
+
+
+
+/* done poster */
+
+/* start promotion */
+
+.promotion-section {
+  padding: 60px 0;
+  background: #fafafa;
+}
+
+.promotion-subtitle {
+  font-size: 16px;
+  color: #888;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.promotion-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  padding: 15px;
+  height: 50%;
+}
+
+.promotion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.promotion-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.promotion-title {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+
+/* done promotion */
 
 .testimonial-meta {
   text-align: center;
@@ -705,6 +786,170 @@ label {
   margin-top: 10px;
 }
 
+/* new */
+.section-header-box {
+  background-color: rgb(231, 233, 241);
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  margin-top: 65px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-header-box .section-title h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.section-header-box .section-title p {
+  margin: 0;
+  color: #413e3e;
+}
+
+.section-title-brands {
+  margin-bottom: 20px;
+}
+
+/*css for modal*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-main-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.modal-gallery {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border-top: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+.modal-thumb {
+  width: 70px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+  flex-shrink: 0;
+}
+
+.modal-thumb.active {
+  border: 2px solid #007bff;
+}
+
+/*img wrapper*/
+/* Grid layout: 4 photos per row, with spacing */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 20px 0;
+}
+
+/* Card-style background and layout */
+.portfolio-item-wrapper {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* On hover, upscale slightly and elevate shadow */
+.portfolio-item-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.portfolio-item-wrapper img {
+  width: 100%;
+  height: 220px; /* slightly taller */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Optional: text styling for titles inside Image component */
+.portfolio-item-wrapper h4 {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*nav bar active*/
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:focus,
+.navbar-nav > .active > a:hover {
+  color: #007bff; /* or your theme color */
+  font-weight: bold;
+  border-bottom: 2px solid #007bff;
+}
 
 
 
