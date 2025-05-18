@@ -59,6 +59,7 @@ export const Navigation = (props) => {
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav navbar-right">
+
             {/* Group 1 */}
             <li className="menu-item">
               {scrollLink("#promotion", "SPECIAL")}
@@ -68,6 +69,7 @@ export const Navigation = (props) => {
                 <li>{scrollLink("#gallery", "GALLERY")}</li>
               </ul>
             </li>
+
             {/* Group 2 */}
             <li className={`menu-item ${isActive("/brands") || location.pathname.startsWith("/brands") ? "active" : ""}`}>
               <Link to="/brands">BRANDS</Link>
@@ -80,42 +82,31 @@ export const Navigation = (props) => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/brands#lecreuset"
-                    onClick={(e) => {
+                  <a href="/brands#lecreuset" onClick={(e) => {
                       e.preventDefault();
                       navigate("/brands#lecreuset");
-                    }}
-                  >
-                    LE CREUSET
+                    }}> LE CREUSET
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/brands#smeg"
-                    onClick={(e) => {
+                  <a href="/brands#smeg" onClick={(e) => {
                       e.preventDefault();
                       navigate("/brands#smeg");
-                    }}
-                  >
-                    SMEG
+                    }}> SMEG
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="/brands#staub"
-                    onClick={(e) => {
+                  <a href="/brands#staub" onClick={(e) => {
                       e.preventDefault();
                       navigate("/brands#staub");
-                    }}
-                  >
-                    STAUB
+                    }}> STAUB
                   </a>
                 </li>
               </ul>
             </li>
+
             {/* Group 3 */}
-            <li className={`menu-item ${isActive("/discovery") ? "active" : ""}`}>
+            <li className={`menu-item ${isActive("/discovery") || location.pathname.startsWith("/discovery") ? "active" : ""}`}>
               <Link to="/discovery">DISCOVERY</Link>
               <ul className="submenu">
               <li>

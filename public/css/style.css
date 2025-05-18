@@ -260,7 +260,7 @@ header .intro-text {
   height: 100px;
   padding: 30px 0;
   border-radius: 50%;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, rgb(195, 202, 230) 0%, #5ca9fb 100%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 /* About Section */
@@ -733,47 +733,50 @@ label {
 /* start promotion */
 
 .promotion-section {
+  background: #f8f8f8;
   padding: 60px 0;
-  background: #fafafa;
+}
+
+.section-title h2.exclusive-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
 }
 
 .promotion-subtitle {
-  font-size: 16px;
-  color: #888;
-  margin-top: -10px;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: #666;
 }
 
 .promotion-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  margin: 20px 0;
   padding: 15px;
-  height: 50%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .promotion-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-.promotion-card img {
+.promotion-image {
   width: 100%;
-  height: 300px;
+  height: 320px; /* Increased height */
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .promotion-title {
   margin-top: 15px;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 16px;
   color: #333;
 }
+
 
 
 /* done promotion */

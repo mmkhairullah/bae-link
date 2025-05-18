@@ -1,7 +1,20 @@
+import React, { useState } from "react";
 import { Image } from "./image";
-import React from "react";
 
 export const Promotion = (props) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(null);
+
+  const openModal = (image) => {
+    setActiveImage(image);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setActiveImage(null);
+  };
+
   return (
     <div id="promotion" className="text-center promotion-section">
       <div className="container">
@@ -11,21 +24,36 @@ export const Promotion = (props) => {
         </div>
 
         <div className="row">
-          {props.data
-            ? props.data.map((d, i) => (
-                <div key={`${d.title}-${i}`} className="col-md-4 col-sm-6 col-xs-12">
-                  <div className="promotion-card">
+          {props.data ? (
+            props.data.map((d, i) => (
+              <div key={`${d.title}-${i}`} className="col-md-4 col-sm-6 col-xs-12">
+                <div className="promotion-card">
+                  <div onClick={() => openModal(d.largeImage)} className="promotion-image-wrapper">
                     <Image
                       title={d.title}
                       largeImage={d.largeImage}
                       smallImage={d.smallImage}
                     />
-                    <div className="promotion-title">{d.title}</div>
                   </div>
+                  <div className="promotion-title">{d.title}</div>
                 </div>
-              ))
-            : "Loading..."}
+              </div>
+            ))
+          ) : (
+            "Loading..."
+          )}
         </div>
+
+        {modalOpen && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <img src={activeImage} alt="Enlarged Promotion" className="modal-image" />
+              <button className="modal-close" onClick={closeModal}>
+                &times;
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

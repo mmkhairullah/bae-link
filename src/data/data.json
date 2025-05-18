@@ -339,7 +339,7 @@
   "Features": [
     {
       "icon": "fa fa-comments-o",
-      "title": "Customer Service",
+      "title": "One-on-One Consultations",
       "text": "Communicate with our team and let us help."
     },
     {
@@ -353,7 +353,7 @@
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     },
     {
-      "icon": "fa fa-magic",
+      "icon": "fa fa-gift",
       "title": "Pre Order",
       "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
     }
