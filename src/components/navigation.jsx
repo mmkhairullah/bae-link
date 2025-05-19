@@ -73,7 +73,7 @@ export const Navigation = (props) => {
             {/* Group 2 */}
             <li className={`menu-item ${isActive("/brands") || location.pathname.startsWith("/brands") ? "active" : ""}`}>
               <Link to="/brands">BRANDS</Link>
-              <ul className="submenu">
+              <ul className={`submenu ${isActive("/brands#portmeirion") || location.pathname.startsWith("/brands#portmeirion") ? "active" : ""}`}>
                 <li>
                   <a href="/brands#portmeirion" onClick={(e) => {
                       e.preventDefault();

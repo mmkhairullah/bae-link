@@ -11,23 +11,23 @@ export const Staub = (props) => {
     <div id="staub" className="text-center">
       <div className="container">
         {/* Header */}
-        <div className="section-header-box">
-          <div className="section-title-brands section-title">
-            <h2>STAUB</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-              dapibus leonec.
+        <div className="section-header-box exclusive-header">
+          <div className="exclusive-title-container">
+            <h2 className="exclusive-title">STAUB</h2>
+            <div className="exclusive-underline"></div>
+            <p className="exclusive-subtitle">
+              STAUB is synonymous with French craftsmanship, bringing together beauty and functionality in every piece. Their cast-iron cookware is designed to last a lifetime.
             </p>
           </div>
         </div>
 
         {/* Grid of Images */}
-        <div className="portfolio-grid">
+        <div className="brand-grid">
           {props.data
             ? props.data.map((d, i) => (
                 <div
                   key={`${d.title}-${i}`}
-                  className="portfolio-item-wrapper"
+                  className="brand-item-wrapper"
                   onClick={() => openModal(d)}
                 >
                   <Image

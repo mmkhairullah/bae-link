@@ -11,23 +11,23 @@ export const Smeg = (props) => {
     <div id="smeg" className="text-center">
       <div className="container">
         {/* Header */}
-        <div className="section-header-box">
-          <div className="section-title-brands section-title">
-            <h2>SMEG</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-              dapibus leonec.
+        <div className="section-header-box exclusive-header">
+          <div className="exclusive-title-container">
+            <h2 className="exclusive-title">SMEG</h2>
+            <div className="exclusive-underline"></div>
+            <p className="exclusive-subtitle">
+              Infuse your kitchen with style and performance. SMEG’s retro-inspired appliances combine top-notch engineering with an aesthetic that makes a statement.
             </p>
           </div>
         </div>
 
         {/* Grid of Images */}
-        <div className="portfolio-grid">
+        <div className="brand-grid">
           {props.data
             ? props.data.map((d, i) => (
                 <div
                   key={`${d.title}-${i}`}
-                  className="portfolio-item-wrapper"
+                  className="brand-item-wrapper"
                   onClick={() => openModal(d)}
                 >
                   <Image

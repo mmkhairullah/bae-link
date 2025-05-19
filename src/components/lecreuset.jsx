@@ -11,23 +11,23 @@ export const Lecreuset = (props) => {
     <div id="lecreuset" className="text-center">
       <div className="container">
         {/* Header */}
-        <div className="section-header-box">
-          <div className="section-title-brands section-title">
-            <h2>Lecreuset</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-              dapibus leonec.
+        <div className="section-header-box exclusive-header">
+          <div className="exclusive-title-container">
+            <h2 className="exclusive-title">Le Creuset</h2>
+            <div className="exclusive-underline"></div>
+            <p className="exclusive-subtitle">
+              Known for their vibrant colors and timeless design, Le Creuset cookware is perfect for both seasoned chefs and home cooks who appreciate high-quality, durable products.
             </p>
           </div>
         </div>
 
         {/* Grid of Images */}
-        <div className="portfolio-grid">
+        <div className="brand-grid">
           {props.data
             ? props.data.map((d, i) => (
                 <div
                   key={`${d.title}-${i}`}
-                  className="portfolio-item-wrapper"
+                  className="brand-item-wrapper"
                   onClick={() => openModal(d)}
                 >
                   <Image

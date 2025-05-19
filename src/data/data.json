@@ -4,7 +4,7 @@
     "paragraph": " "
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "At The Whole Story, we believe that the right kitchenware transforms not just your cooking, but the entire experience of being in the kitchen. Our journey began with a simple passion for great cookware—pieces that not only make your kitchen more beautiful but elevate every meal you create. As personal shoppers, we're dedicated to finding the perfect items for your unique needs, ensuring that each product feels like a perfect match. From iconic brands like Le Creuset to charming Portmeirion, we take the guesswork out of creating a kitchen you’ll love. Join us as we tell your kitchen’s story",
     "Why": [
       "Lorem ipsum dolor",
       "Tempor incididunt",
@@ -96,24 +96,32 @@
   ],
   "Portmeirion": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "Spatula",
+      "description": "Durable and elegant spatula.",
+      "variations": [
+        {
+          "largeImage": "img/lc/sp1.jpg",
+          "smallImage": "img/lc/sp1.jpg"
+        },
+        {
+          "largeImage": "img/lc/sp2.jpg",
+          "smallImage": "img/lc/sp2.jpg"
+        }
+      ]
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
+      "title": "Serving Dish",
+      "description": "Perfect for family-style meals.",
+      "variations": [
+        {
+          "largeImage": "img/portfolio/09-large.jpg",
+          "smallImage": "img/portfolio/09-small.jpg"
+        },
+        {
+          "largeImage": "img/portfolio/07-large.jpg",
+          "smallImage": "img/portfolio/07-small.jpg"
+        }
+      ]
     }
   ],
   "Lecreuset": [
@@ -217,12 +225,12 @@
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe",     
+      "text": "\"I never knew shopping for cookware could be this easy and fun! The Whole Story helped me select the perfect set of Le Creuset pots for my new kitchen, and they even walked me through the care instructions!\"",
+      "name": "Farah A",     
       "images": [
         { 
-          "original": "img/testimonials/01.jpg", 
-          "thumbnail": "img/testimonials/01.jpg",
+          "original": "img/portfolio/07-large.jpg", 
+          "thumbnail": "img/portfolio/07-large.jpg",
           "description": "Image 1"
         },
         { 
@@ -234,8 +242,8 @@
     },
     {
       "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe",
+      "text": "\"I was overwhelmed by all the choices, but The Whole Story made everything so simple. The personal recommendations were spot-on, and my new Smeg appliances have completely transformed my kitchen.\"",
+      "name": "Aida K",
       "images": [
         { 
           "original": "img/testimonials/01.jpg", 
@@ -251,8 +259,8 @@
     },
     {
       "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe",
+      "text": "\"I’ve always wanted to own Staub, and thanks to The Whole Story, I now have a whole collection that suits my cooking style perfectly.\"",
+      "name": "Chef Sammuel",
       "images": [
         { 
           "original": "img/testimonials/01.jpg", 
@@ -265,45 +273,6 @@
           "description": "Image 2"
         }
       ]
-    },
-    {
-      "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe",
-      "images": [
-        { 
-          "original": "img/testimonials/01.jpg", 
-          "thumbnail": "img/testimonials/01.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/testimonials/02.jpg", 
-          "thumbnail": "img/testimonials/02.jpg",
-          "description": "Image 2"
-        }
-      ]
-    },
-    {
-      "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe",
-      "images": [
-        { 
-          "original": "img/testimonials/01.jpg", 
-          "thumbnail": "img/testimonials/01.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/testimonials/02.jpg", 
-          "thumbnail": "img/testimonials/02.jpg",
-          "description": "Image 2"
-        }
-      ]
-    },
-    {
-      "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
     }
   ],
   "Team": [
@@ -340,22 +309,22 @@
     {
       "icon": "fa fa-comments-o",
       "title": "One-on-One Consultations",
-      "text": "Communicate with our team and let us help."
+      "text": "Whether you’re outfitting a new kitchen or upgrading your current one, we’ll walk you through the best options tailored to your taste and needs."
     },
     {
-      "icon": "fa fa-bullhorn",
-      "title": "Promotion",
-      "text": "Follow our social media for more promotion."
+      "icon": "fa fa-check-square",
+      "title": "Custom Recommendations",
+      "text": "We’ll curate a list of hand-picked kitchenware based on your cooking habits, style preferences, and budget."
     },
     {
-      "icon": "fa fa-group",
-      "title": "Community Support",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-truck",
+      "title": "Special Orders & Deliveries",
+      "text": "Need something rare or specific? We’ll source it for you and deliver it directly to your door."
     },
     {
       "icon": "fa fa-gift",
-      "title": "Pre Order",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "Gift Registries",
+      "text": "Create a beautiful gift registry for weddings, housewarmings, or special occasions, featuring the finest kitchenware."
     }
   ]
 }

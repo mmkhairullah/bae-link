@@ -249,7 +249,8 @@ header .intro-text {
 }
 /* Features Section */
 #features {
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
+  padding: 40px;
 }
 #features i.fa {
   font-size: 38px;
@@ -260,7 +261,7 @@ header .intro-text {
   height: 100px;
   padding: 30px 0;
   border-radius: 50%;
-  background: linear-gradient(to right, rgb(195, 202, 230) 0%, #5ca9fb 100%);
+  background: linear-gradient(to right, rgb(195, 202, 230) 0%, rgb(231, 233, 791) 100%);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 /* About Section */
@@ -442,6 +443,88 @@ header .intro-text {
   font-weight: 600;
   color: #666;
 }
+
+.testimonial-wrapper {
+  margin: 0 auto 40px;
+}
+
+
+.testimonial {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-meta {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.testimonial-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.testimonial-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  transition: transform 0.2s ease;
+}
+
+.testimonial-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* Modal */
+.testimonial-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.testimonial-modal-content {
+  position: relative;
+  max-width: 100%;
+  max-height: 80%;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.testimonial-modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.testimonial-modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 2rem;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
 /* Team Section */
 #team {
   padding: 100px 0;
@@ -464,6 +547,8 @@ header .intro-text {
 #contact {
   padding: 100px 0 60px;
   /* background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); */
+  /* background: rgb(231, 233, 241); */
+  /* background: rgb(195, 202, 230) 0%; */
   background: rgb(231, 233, 241);
   color: rgb(7, 7, 8); 
 }
@@ -793,8 +878,8 @@ label {
 .section-header-box {
   background-color: rgb(231, 233, 241);
   padding: 15px 10px;
-  margin-bottom: 10px;
-  margin-top: 65px;
+  margin-bottom: 5px;
+  margin-top: 130px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -954,6 +1039,99 @@ label {
   border-bottom: 2px solid #007bff;
 }
 
+
+/* TESTING CSSS */
+
+.exclusive-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.exclusive-title-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.exclusive-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.exclusive-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 12px auto 20px;
+  border-radius: 2px;
+}
+
+.exclusive-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/*new------------------*/
+
+/* Grid Container */
+.brand-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* Each Item in the Grid */
+.brand-item-wrapper {
+  flex: 1 1 calc(33.333% - 32px); /* 3 columns */
+  max-width: calc(33.333% - 32px);
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-item-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Make images taller and larger */
+.brand-item-wrapper img {
+  width: 100%;
+  height: 380px; /* Increased height */
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Responsive: Stack on smaller screens */
+@media (max-width: 991px) {
+  .brand-item-wrapper {
+    flex: 1 1 calc(50% - 32px);
+    max-width: calc(50% - 32px);
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-item-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .brand-item-wrapper img {
+    height: 220px;
+  }
+}
+
+
+/* END TESTING */
 
 
 

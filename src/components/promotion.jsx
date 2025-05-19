@@ -19,8 +19,9 @@ export const Promotion = (props) => {
     <div id="promotion" className="text-center promotion-section">
       <div className="container">
         <div className="section-title padding-title">
-          <h2>3 For 2 Spatula</h2>
-          <p className="promotion-subtitle">Limited Time Offer – Don't Miss Out!</p>
+          <h2>Special Offer : 30% + 10% Off Your First Purchase!</h2>
+          <p className="promotion-subtitle">New to The Whole Story?</p>
+          <p className="promotion-subtitle">Enjoy a combo 30%+10% discount on your first order when you book a personal shopping consultation with us. Let’s find the perfect pieces for your kitchen, together!</p>
         </div>
 
         <div className="row">

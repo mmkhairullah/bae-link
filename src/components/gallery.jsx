@@ -19,7 +19,7 @@ export const Gallery = (props) => {
     <div id="gallery" className="text-center">
       <div className="container">
         <div className="section-title">
-          <h2>Gallery</h2>
+          <h2 className="exclusive-title">Gallery</h2>
           <p>Enjoying the colors of collections.</p>
         </div>
         <div className="row">

@@ -1,39 +1,46 @@
 import React, { useState } from "react";
 import { Image } from "./image";
 
-export const Portmeirion = (props) => {
-  const [selectedImageData, setSelectedImageData] = useState(null);
+export const Portmeirion = ({ data }) => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedVariation, setSelectedVariation] = useState(null);
 
-  const openModal = (imageData) => setSelectedImageData(imageData);
-  const closeModal = () => setSelectedImageData(null);
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setSelectedVariation(product.variations[0]);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+    setSelectedVariation(null);
+  };
 
   return (
     <div id="portmeirion" className="text-center">
       <div className="container">
-        {/* Header */}
-        <div className="section-header-box">
-          <div className="section-title-brands section-title">
-            <h2>Portmeirion</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-              dapibus leonec.
+        <div className="section-header-box exclusive-header">
+          <div className="exclusive-title-container">
+            <h2 className="exclusive-title">Portmeirion</h2>
+            <div className="exclusive-underline"></div>
+            <p className="exclusive-subtitle">
+              Elegant and charming, Portmeirion offers a wide range of beautiful tableware that adds a touch of sophistication to every meal.
             </p>
           </div>
         </div>
 
-        {/* Grid of Images */}
-        <div className="portfolio-grid">
-          {props.data
-            ? props.data.map((d, i) => (
+        {/* Product Grid */}
+        <div className="brand-grid">
+          {data
+            ? data.map((product, i) => (
                 <div
-                  key={`${d.title}-${i}`}
-                  className="portfolio-item-wrapper"
-                  onClick={() => openModal(d)}
+                  key={`${product.title}-${i}`}
+                  className="brand-item-wrapper"
+                  onClick={() => openModal(product)}
                 >
                   <Image
-                    title={d.title}
-                    largeImage={d.largeImage}
-                    smallImage={d.smallImage}
+                    title={product.title}
+                    largeImage={product.variations[0].largeImage}
+                    smallImage={product.variations[0].smallImage}
                   />
                 </div>
               ))
@@ -42,7 +49,7 @@ export const Portmeirion = (props) => {
       </div>
 
       {/* Modal */}
-      {selectedImageData && (
+      {selectedProduct && selectedVariation && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>
@@ -51,22 +58,22 @@ export const Portmeirion = (props) => {
 
             <div className="modal-main-image">
               <img
-                src={selectedImageData.largeImage}
-                alt={selectedImageData.title}
+                src={selectedVariation.largeImage}
+                alt={selectedProduct.title}
                 className="modal-image"
               />
             </div>
 
             <div className="modal-gallery">
-              {props.data.map((item, index) => (
+              {selectedProduct.variations.map((variation, index) => (
                 <img
                   key={index}
-                  src={item.smallImage}
-                  alt={item.title}
+                  src={variation.smallImage}
+                  alt={selectedProduct.title}
                   className={`modal-thumb ${
-                    item.largeImage === selectedImageData.largeImage ? "active" : ""
+                    variation.largeImage === selectedVariation.largeImage ? "active" : ""
                   }`}
-                  onClick={() => setSelectedImageData(item)}
+                  onClick={() => setSelectedVariation(variation)}
                 />
               ))}
             </div>
