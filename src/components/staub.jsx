@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import { Image } from "./image";
 
-export const Staub = (props) => { 
-  const [selectedImageData, setSelectedImageData] = useState(null);
+export const Staub = ({ data }) => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedVariation, setSelectedVariation] = useState(null);
 
-  const openModal = (imageData) => setSelectedImageData(imageData);
-  const closeModal = () => setSelectedImageData(null);
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setSelectedVariation(product.variations[0]);
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+    setSelectedVariation(null);
+  };
 
   return (
     <div id="staub" className="text-center">
       <div className="container">
-        {/* Header */}
         <div className="section-header-box exclusive-header">
           <div className="exclusive-title-container">
             <h2 className="exclusive-title">STAUB</h2>
@@ -21,19 +28,19 @@ export const Staub = (props) => {
           </div>
         </div>
 
-        {/* Grid of Images */}
+        {/* Product Grid */}
         <div className="brand-grid">
-          {props.data
-            ? props.data.map((d, i) => (
+          {data
+            ? data.map((product, i) => (
                 <div
-                  key={`${d.title}-${i}`}
+                  key={`${product.title}-${i}`}
                   className="brand-item-wrapper"
-                  onClick={() => openModal(d)}
+                  onClick={() => openModal(product)}
                 >
                   <Image
-                    title={d.title}
-                    largeImage={d.largeImage}
-                    smallImage={d.smallImage}
+                    title={product.title}
+                    largeImage={product.variations[0].largeImage}
+                    smallImage={product.variations[0].smallImage}
                   />
                 </div>
               ))
@@ -42,7 +49,7 @@ export const Staub = (props) => {
       </div>
 
       {/* Modal */}
-      {selectedImageData && (
+      {selectedProduct && selectedVariation && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>
@@ -51,22 +58,22 @@ export const Staub = (props) => {
 
             <div className="modal-main-image">
               <img
-                src={selectedImageData.largeImage}
-                alt={selectedImageData.title}
+                src={selectedVariation.largeImage}
+                alt={selectedProduct.title}
                 className="modal-image"
               />
             </div>
 
             <div className="modal-gallery">
-              {props.data.map((item, index) => (
+              {selectedProduct.variations.map((variation, index) => (
                 <img
                   key={index}
-                  src={item.smallImage}
-                  alt={item.title}
+                  src={variation.smallImage}
+                  alt={selectedProduct.title}
                   className={`modal-thumb ${
-                    item.largeImage === selectedImageData.largeImage ? "active" : ""
+                    variation.largeImage === selectedVariation.largeImage ? "active" : ""
                   }`}
-                  onClick={() => setSelectedImageData(item)}
+                  onClick={() => setSelectedVariation(variation)}
                 />
               ))}
             </div>

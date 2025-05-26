@@ -211,16 +211,41 @@ a:focus,
   display: table;
   width: 100%;
   padding: 0;
-  background: url(../img/intro-bg.jpg) center center no-repeat;
-  background-color: #e5e5e5;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  -o-background-size: cover;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: background-image 0.5s ease-in-out;
 }
-.intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+
+.intro-image-wrapper {
+  position: relative;
+  padding-top: 30px;
+  display: inline-block;
+  width: 100%;
 }
+
+.intro-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.intro-text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
 .intro h1 {
   font-family: "Raleway", sans-serif;
   color: #fff;
@@ -523,7 +548,65 @@ header .intro-text {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
+.testimonial-thumb {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  margin: 5px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 5px;
+}
 
+.enlarged-thumb {
+  width: 110px; /* Make thumbnail slightly larger */
+  height: 110px;
+}
+
+.testimonial-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.testimonial-modal-content {
+  position: relative;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.testimonial-modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.testimonial-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+
+/*end of testimonial*/
 
 /* Team Section */
 #team {
@@ -765,13 +848,9 @@ label {
 }
 
 /* poster */
+/* Poster image wrapper maintains layout size */
 .poster-image-wrapper {
-  height: 600px; /* Adjust height as needed */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 40px 20px 40px;
+  padding: 15px;
 }
 
 .poster-image-wrapper img {
@@ -782,16 +861,19 @@ label {
 
 .poster-section {
   background: #f8f8f8;
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 .poster-card {
-  height: 500px;
+  width: 100%;
+  height: 300px; /* or any fixed/relative height you want */
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  background: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .poster-card:hover {
@@ -799,12 +881,12 @@ label {
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
 
+/* Compress image inside the wrapper */
 .poster-card img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  border-radius: 12px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Ensures image is scaled proportionally and fits inside */
+  display: block;
 }
 
 .poster-card:hover img {
@@ -819,7 +901,7 @@ label {
 
 .promotion-section {
   background: #f8f8f8;
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 .section-title h2.exclusive-heading {
@@ -899,77 +981,81 @@ label {
 }
 
 /*css for modal*/
+/* Modal Overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Modal Container */
 .modal-content {
-  background: white;
-  width: 90%;
-  max-width: 800px;
-  max-height: 90vh;
-  border-radius: 8px;
-  overflow: hidden;
+  background: #fff;
+  padding: 20px;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  border-radius: 8px;
+  text-align: center;
 }
 
+/* Close Button */
 .modal-close {
   position: absolute;
   top: 10px;
   right: 15px;
   background: transparent;
   border: none;
-  font-size: 2rem;
+  font-size: 24px;
   cursor: pointer;
-  z-index: 10;
+  color: #333;
 }
 
+/* Main Image in Modal */
 .modal-main-image {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .modal-image {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 70vh;
   object-fit: contain;
+  border-radius: 4px;
 }
 
+/* Thumbnail Gallery */
 .modal-gallery {
-  padding: 10px;
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  border-top: 1px solid #ccc;
-  background: #f9f9f9;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .modal-thumb {
-  width: 70px;
-  margin: 5px;
-  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
   border: 2px solid transparent;
-  transition: border 0.3s;
-  flex-shrink: 0;
+  cursor: pointer;
+  transition: border 0.2s ease;
+  border-radius: 4px;
 }
 
 .modal-thumb.active {
-  border: 2px solid #007bff;
+  border-color: #000;
 }
 
 /*img wrapper*/
@@ -1132,6 +1218,13 @@ label {
 
 
 /* END TESTING */
+
+.navbar-logo {
+  height: 60px; /* or whatever size you want */
+  width: auto;
+  display: block;
+}
+
 
 
 

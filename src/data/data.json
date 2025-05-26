@@ -1,7 +1,11 @@
 {
   "Header": {
     "title": " ",
-    "paragraph": " "
+    "paragraph": " ",
+    "images": [
+      "img/banner/banner_1.jpg",
+      "img/banner/banner_2.jpg"
+    ]
   },
   "About": {
     "paragraph": "At The Whole Story, we believe that the right kitchenware transforms not just your cooking, but the entire experience of being in the kitchen. Our journey began with a simple passion for great cookware—pieces that not only make your kitchen more beautiful but elevate every meal you create. As personal shoppers, we're dedicated to finding the perfect items for your unique needs, ensuring that each product feels like a perfect match. From iconic brands like Le Creuset to charming Portmeirion, we take the guesswork out of creating a kitchen you’ll love. Join us as we tell your kitchen’s story",
@@ -67,31 +71,31 @@
   ],
   "Promotion": [
     {
-      "title": "Spatula 1",
-      "largeImage": "img/lc/sp1.jpg",
-      "smallImage": "img/lc/sp1.jpg"
+      "title": " ",
+      "largeImage": "img/poster/poster_1.jpg",
+      "smallImage": "img/poster/poster_1.jpg"
     },
     {
-      "title": "Spatula 2",
-      "largeImage": "img/lc/sp2.jpg",
-      "smallImage": "img/lc/sp2.jpg"
+      "title": " ",
+      "largeImage": "img/poster/poster_2.jpg",
+      "smallImage": "img/poster/poster_2.jpg"
     },
     {
-      "title": "Spatula 3",
-      "largeImage": "img/lc/sp3.jpg",
-      "smallImage": "img/lc/sp3.jpg"
+      "title": " ",
+      "largeImage": "img/poster/poster_3.jpg",
+      "smallImage": "img/poster/poster_3.jpg"
     }
   ],
   "Poster": [
     {
       "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "largeImage": "img/promo_1.jpg",
+      "smallImage": "img/promo_1.jpg"
     },
     {
       "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
+      "largeImage": "img/promo_2.jpg",
+      "smallImage": "img/promo_2.jpg"
     }
   ],
   "Portmeirion": [
@@ -126,68 +130,98 @@
   ],
   "Lecreuset": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "Spatula",
+      "description": "Durable and elegant spatula.",
+      "variations": [
+        {
+          "largeImage": "img/lc/sp1.jpg",
+          "smallImage": "img/lc/sp1.jpg"
+        },
+        {
+          "largeImage": "img/lc/sp2.jpg",
+          "smallImage": "img/lc/sp2.jpg"
+        },
+        {
+          "largeImage": "img/lc/sp3.jpg",
+          "smallImage": "img/lc/sp3.jpg"
+        },
+        {
+          "largeImage": "img/lc/sp4.jpg",
+          "smallImage": "img/lc/sp4.jpg"
+        }
+      ]
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
+      "title": "Pans",
+      "description": "Perfect for cooking family-style meals.",
+      "variations": [
+        {
+          "largeImage": "img/lc/p_1.jpg",
+          "smallImage": "img/lc/p_1.jpg"
+        },
+        {
+          "largeImage": "img/lc/p_2.jpg",
+          "smallImage": "img/lc/p_2.jpg"
+        },
+        {
+          "largeImage": "img/lc/p_3.jpg",
+          "smallImage": "img/lc/p_3.jpg"
+        },
+        {
+          "largeImage": "img/lc/p_4.jpg",
+          "smallImage": "img/lc/p_4.jpg"
+        }
+      ]
     }
   ],
   "Smeg": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
+      "title": "Knives",
+      "description": "Sharp.",
+      "variations": [
+        {
+          "largeImage": "img/smeg/knive_1.jpg",
+          "smallImage": "img/smeg/knive_1.jpg"
+        },
+        {
+          "largeImage": "img/smeg/knive_2.jpg",
+          "smallImage": "img/smeg/knive_2.jpg"
+        },
+        {
+          "largeImage": "img/smeg/knive_3.jpg",
+          "smallImage": "img/smeg/knive_3.jpg"
+        },
+        {
+          "largeImage": "img/smeg/knive_4.jpg",
+          "smallImage": "img/smeg/knive_4.jpg"
+        },
+        {
+          "largeImage": "img/smeg/knive_5.jpg",
+          "smallImage": "img/smeg/knive_5.jpg"
+        }
+      ]
     },
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
+      "title": "Tumblr",
+      "description": "SMEG Tumblr.",
+      "variations": [
+        {
+          "largeImage": "img/smeg/tm_1.jpg",
+          "smallImage": "img/smeg/tm_1.jpg"
+        }
+      ]
     }
   ],
   "Staub": [
     {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/01-large.jpg",
-      "smallImage": "img/portfolio/01-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/09-large.jpg",
-      "smallImage": "img/portfolio/09-small.jpg"
-    },
-    {
-      "title": "Project Title",
-      "largeImage": "img/portfolio/07-large.jpg",
-      "smallImage": "img/portfolio/07-small.jpg"
+      "title": "Tumblr",
+      "description": "SMEG Tumblr.",
+      "variations": [
+        {
+          "largeImage": "img/smeg/tm_1.jpg",
+          "smallImage": "img/smeg/tm_1.jpg"
+        }
+      ]
     }
   ],
   "Services": [
@@ -229,14 +263,44 @@
       "name": "Farah A",     
       "images": [
         { 
-          "original": "img/portfolio/07-large.jpg", 
-          "thumbnail": "img/portfolio/07-large.jpg",
-          "description": "Image 1"
+          "original": "img/review/farah_1.jpg", 
+          "thumbnail": "img/review/farah_1.jpg",
+          "description": ""
         },
         { 
-          "original": "img/testimonials/02.jpg", 
-          "thumbnail": "img/testimonials/02.jpg",
-          "description": "Image 2"
+          "original": "img/review/farah_2.jpg", 
+          "thumbnail": "img/review/farah_2.jpg",
+          "description": ""
+        },
+        { 
+          "original": "img/review/farah_3.jpg", 
+          "thumbnail": "img/review/farah_3.jpg",
+          "description": ""
+        },
+        { 
+          "original": "img/review/farah_4.jpg", 
+          "thumbnail": "img/review/farah_4.jpg",
+          "description": ""
+        },
+        { 
+          "original": "img/review/farah_5.jpg", 
+          "thumbnail": "img/review/farah_5.jpg",
+          "description": ""
+        },
+        { 
+          "original": "img/review/farah_6.jpg", 
+          "thumbnail": "img/review/farah_6.jpg",
+          "description": ""
+        },
+        { 
+          "original": "img/review/farah_7.jpg", 
+          "thumbnail": "img/review/farah_7.jpg",
+          "description": ""
+        },
+        { 
+          "original": "img/review/farah_8.jpg", 
+          "thumbnail": "img/review/farah_8.jpg",
+          "description": ""
         }
       ]
     },
@@ -246,14 +310,39 @@
       "name": "Aida K",
       "images": [
         { 
-          "original": "img/testimonials/01.jpg", 
-          "thumbnail": "img/testimonials/01.jpg",
+          "original": "img/review/aida_1.jpg", 
+          "thumbnail": "img/review/aida_1.jpg",
           "description": "Image 1"
         },
         { 
-          "original": "img/testimonials/02.jpg", 
-          "thumbnail": "img/testimonials/02.jpg",
-          "description": "Image 2"
+          "original": "img/review/aida_2.jpg", 
+          "thumbnail": "img/review/aida_2.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/aida_3.jpg", 
+          "thumbnail": "img/review/aida_3.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/aida_4.jpg", 
+          "thumbnail": "img/review/aida_4.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/aida_5.jpg", 
+          "thumbnail": "img/review/aida_5.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/aida_6.jpg", 
+          "thumbnail": "img/review/aida_6.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/aida_7.jpg", 
+          "thumbnail": "img/review/aida_7.jpg",
+          "description": "Image 1"
         }
       ]
     },
@@ -263,14 +352,44 @@
       "name": "Chef Sammuel",
       "images": [
         { 
-          "original": "img/testimonials/01.jpg", 
-          "thumbnail": "img/testimonials/01.jpg",
+          "original": "img/review/chef_1.jpg", 
+          "thumbnail": "img/review/chef_1.jpg",
           "description": "Image 1"
         },
         { 
-          "original": "img/testimonials/02.jpg", 
-          "thumbnail": "img/testimonials/02.jpg",
-          "description": "Image 2"
+          "original": "img/review/chef_2.jpg", 
+          "thumbnail": "img/review/chef_2.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/chef_3.jpg", 
+          "thumbnail": "img/review/chef_3.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/chef_4.jpg", 
+          "thumbnail": "img/review/chef_4.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/chef_5.jpg", 
+          "thumbnail": "img/review/chef_5.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/chef_6.jpg", 
+          "thumbnail": "img/review/chef_6.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/chef_7.jpg", 
+          "thumbnail": "img/review/chef_7.jpg",
+          "description": "Image 1"
+        },
+        { 
+          "original": "img/review/chef_8.jpg", 
+          "thumbnail": "img/review/chef_8.jpg",
+          "description": "Image 1"
         }
       ]
     }

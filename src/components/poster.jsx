@@ -18,9 +18,11 @@ export const Poster = (props) => {
   return (
     <div id="poster" className="text-center poster-section">
       <div className="container">
-        <div className="section-title padding-title">
-          <h2>50% off Botanic Garden Collection</h2>
-        </div>
+      <div className="section-title padding-title">
+          <h2>Special Offer : 30% + 10% Off Your First Purchase!</h2>
+          <p className="promotion-subtitle">New to The Whole Story?</p>
+          <p className="promotion-subtitle">Enjoy a combo 30%+10% discount on your first order when you book a personal shopping consultation with us. Let’s find the perfect pieces for your kitchen, together!</p>
+      </div>
 
         <div className="row">
           {props.data && props.data.length === 2 ? (

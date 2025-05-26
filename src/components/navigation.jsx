@@ -35,7 +35,6 @@ export const Navigation = (props) => {
   }, [location.hash]);
   
   
-
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -52,8 +51,12 @@ export const Navigation = (props) => {
             <span className="icon-bar" />
           </button>
            {/* BAE LINK: force scroll to top if on homepage */}
-           <a href="/" className="navbar-brand page-scroll" onClick={handleHomeClick}>
-            THE WHOLE STORY
+           <a href="/" className=" page-scroll" onClick={handleHomeClick}>
+              <img
+                src="/img/main.jpg"
+                alt="The Whole Story"
+                className="navbar-logo"
+              />
           </a>
         </div>
 

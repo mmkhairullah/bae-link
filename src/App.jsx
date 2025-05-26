@@ -30,8 +30,8 @@ const MainPage = ({ data }) => (
   <div>
       <Header data={data.Header} />
       <Navigation data={data.Navigation} />
-      <Promotion data={data.Promotion} />
       <Poster data={data.Poster} />
+      <Promotion data={data.Promotion} />
       <Gallery data={data.Gallery} />
       <Features data={data.Features} />
       <Contact data={data.Contact} />

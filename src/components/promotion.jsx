@@ -19,15 +19,15 @@ export const Promotion = (props) => {
     <div id="promotion" className="text-center promotion-section">
       <div className="container">
         <div className="section-title padding-title">
-          <h2>Special Offer : 30% + 10% Off Your First Purchase!</h2>
-          <p className="promotion-subtitle">New to The Whole Story?</p>
-          <p className="promotion-subtitle">Enjoy a combo 30%+10% discount on your first order when you book a personal shopping consultation with us. Let’s find the perfect pieces for your kitchen, together!</p>
+          <h2>Enjoy Promotion!</h2>
+          {/* <p className="promotion-subtitle">New to The Whole Story?</p>
+          <p className="promotion-subtitle">Enjoy a combo 30%+10% discount on your first order when you book a personal shopping consultation with us. Let’s find the perfect pieces for your kitchen, together!</p> */}
         </div>
 
         <div className="row">
           {props.data ? (
             props.data.map((d, i) => (
-              <div key={`${d.title}-${i}`} className="col-md-4 col-sm-6 col-xs-12">
+              <div key={`${d.title}-${i}`} className="col-md-4 col-sm-4 col-xs-10">
                 <div className="promotion-card">
                   <div onClick={() => openModal(d.largeImage)} className="promotion-image-wrapper">
                     <Image
