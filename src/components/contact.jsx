@@ -152,7 +152,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2025 Bae Link. Design by{" MKHRLLH"}
+            &copy; 2025 thewholestory.shop
           </p>
         </div>
       </div>

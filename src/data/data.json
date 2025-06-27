@@ -276,31 +276,6 @@
           "original": "img/review/farah_3.jpg", 
           "thumbnail": "img/review/farah_3.jpg",
           "description": ""
-        },
-        { 
-          "original": "img/review/farah_4.jpg", 
-          "thumbnail": "img/review/farah_4.jpg",
-          "description": ""
-        },
-        { 
-          "original": "img/review/farah_5.jpg", 
-          "thumbnail": "img/review/farah_5.jpg",
-          "description": ""
-        },
-        { 
-          "original": "img/review/farah_6.jpg", 
-          "thumbnail": "img/review/farah_6.jpg",
-          "description": ""
-        },
-        { 
-          "original": "img/review/farah_7.jpg", 
-          "thumbnail": "img/review/farah_7.jpg",
-          "description": ""
-        },
-        { 
-          "original": "img/review/farah_8.jpg", 
-          "thumbnail": "img/review/farah_8.jpg",
-          "description": ""
         }
       ]
     },
@@ -323,26 +298,6 @@
           "original": "img/review/aida_3.jpg", 
           "thumbnail": "img/review/aida_3.jpg",
           "description": "Image 1"
-        },
-        { 
-          "original": "img/review/aida_4.jpg", 
-          "thumbnail": "img/review/aida_4.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/aida_5.jpg", 
-          "thumbnail": "img/review/aida_5.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/aida_6.jpg", 
-          "thumbnail": "img/review/aida_6.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/aida_7.jpg", 
-          "thumbnail": "img/review/aida_7.jpg",
-          "description": "Image 1"
         }
       ]
     },
@@ -359,36 +314,6 @@
         { 
           "original": "img/review/chef_2.jpg", 
           "thumbnail": "img/review/chef_2.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/chef_3.jpg", 
-          "thumbnail": "img/review/chef_3.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/chef_4.jpg", 
-          "thumbnail": "img/review/chef_4.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/chef_5.jpg", 
-          "thumbnail": "img/review/chef_5.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/chef_6.jpg", 
-          "thumbnail": "img/review/chef_6.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/chef_7.jpg", 
-          "thumbnail": "img/review/chef_7.jpg",
-          "description": "Image 1"
-        },
-        { 
-          "original": "img/review/chef_8.jpg", 
-          "thumbnail": "img/review/chef_8.jpg",
           "description": "Image 1"
         }
       ]

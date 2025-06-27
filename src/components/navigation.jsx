@@ -1,40 +1,68 @@
-import React, { useEffect } from "react";
-import { Nav } from "react-bootstrap";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-
-export const Navigation = (props) => { 
+export const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [currentHash, setCurrentHash] = useState(location.hash);
+
   const isHome = location.pathname === "/";
 
-  const handleHomeClick = (e) => {
-    e.preventDefault();
-    if (isHome) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      navigate("/");
-    }
-  };
-
-  const scrollLink = (href, label) => (
-    isHome ? (
-      <a href={href} className="page-scroll">{label}</a>
-    ) : (
-      <Link to={`/#${href.replace("#", "")}`} className="page-scroll">{label}</Link>
-    )
-  );
-
-  const isActive = (path) => {
-    // Match path or full path + hash
-    return location.pathname === path || location.pathname + location.hash === path;
-  };
-
+  // Scroll to element after route changes
   useEffect(() => {
-    // This ensures re-render on hash change
-  }, [location.hash]);
+    if (location.hash) {
+      setCurrentHash(location.hash);
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    } else {
+      setCurrentHash("");
+    }
+  }, [location]);
+
+  const isActive = (path, hash = "") => {
+    const current = window.location.hash.replace("#", "");
+    if (path === "/" && location.pathname === "/") {
+      if (!hash) return true;
+      return current === hash;
+    }
+    return location.pathname === path && (!hash || current === hash);
+  };  
+
+  const scrollLink = (hash, label) => {
+    const targetId = hash.replace("#", "");
   
+    const handleClick = (e) => {
+      e.preventDefault();
   
+      if (isHome) {
+        // On home page: just scroll and update hash manually
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        window.history.replaceState(null, "", `/#${targetId}`); // update URL hash without navigation
+        setCurrentHash(hash);
+      } else {
+        // Not on home page: navigate to home without hash, then update hash and scroll
+        navigate("/");
+        setTimeout(() => {
+          window.history.replaceState(null, "", `/#${targetId}`); // update URL hash after navigation
+          const el = document.getElementById(targetId);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+          setCurrentHash(hash);
+        }, 400); // wait for home to load
+      }
+    };
+  
+    return (
+      <a href={`/#${targetId}`} onClick={handleClick} className="page-scroll">
+        {label}
+      </a>
+    );
+  };  
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -50,85 +78,97 @@ export const Navigation = (props) => {
             <span className="icon-bar" />
             <span className="icon-bar" />
           </button>
-           {/* BAE LINK: force scroll to top if on homepage */}
-           <a href="/" className=" page-scroll" onClick={handleHomeClick}>
-              <img
-                src="/img/main.jpg"
-                alt="The Whole Story"
-                className="navbar-logo"
-              />
+          <a href="/" className="page-scroll" onClick={(e) => {
+            e.preventDefault();
+            if (!isHome) navigate("/");
+            else window.scrollTo({ top: 0, behavior: "smooth" });
+          }}>
+            <img
+              src="/img/main.jpg"
+              alt="The Whole Story"
+              className="navbar-logo"
+            />
           </a>
         </div>
 
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav navbar-right">
 
-            {/* Group 1 */}
-            <li className="menu-item">
-              {scrollLink("#promotion", "SPECIAL")}
+            {/* SPECIAL */}
+            {/* <li className={`menu-item ${isActive("/", "poster") ? "active" : ""}`}>
+              {scrollLink("#poster", "SPECIAL")}
               <ul className="submenu">
-                <li>{scrollLink("#promotion", "PROMOTION")}</li>
-                <li>{scrollLink("#poster", "CLEARANCE")}</li>
-                <li>{scrollLink("#gallery", "GALLERY")}</li>
+                <li className={isActive("/", "poster") ? "active" : ""}>
+                  {scrollLink("#poster", "CLEARANCE")}
+                </li>
+                <li className={isActive("/", "promotion") ? "active" : ""}>
+                  {scrollLink("#promotion", "PROMOTION")}
+                </li>
+                <li className={isActive("/", "gallery") ? "active" : ""}>
+                  {scrollLink("#gallery", "GALLERY")}
+                </li>
+              </ul>
+            </li> */}
+
+            <li className={`menu-item ${isActive("/") ? "active" : ""}`}>
+              <a href="/" onClick={(e) => {
+                e.preventDefault();
+                navigate("/");
+              }}>SPECIAL</a>
+              <ul className="submenu">
+                {["poster", "promotion", "gallery"].map((id) => (
+                  <li key={id} className={isActive("/#special", id) ? "active" : ""}>
+                    <a href={`/#${id}`} onClick={(e) => {
+                      e.preventDefault();
+                      navigate(`/#${id}`);
+                    }}>
+                      {id.toUpperCase()}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </li>
 
-            {/* Group 2 */}
-            <li className={`menu-item ${isActive("/brands") || location.pathname.startsWith("/brands") ? "active" : ""}`}>
-              <Link to="/brands">BRANDS</Link>
-              <ul className={`submenu ${isActive("/brands#portmeirion") || location.pathname.startsWith("/brands#portmeirion") ? "active" : ""}`}>
-                <li>
-                  <a href="/brands#portmeirion" onClick={(e) => {
+            {/* BRANDS */}
+            <li className={`menu-item ${isActive("/brands") ? "active" : ""}`}>
+              <a href="/brands" onClick={(e) => {
+                e.preventDefault();
+                navigate("/brands");
+              }}>BRANDS</a>
+              <ul className="submenu">
+                {["portmeirion", "lecreuset", "smeg", "staub"].map((id) => (
+                  <li key={id} className={isActive("/brands", id) ? "active" : ""}>
+                    <a href={`/brands#${id}`} onClick={(e) => {
                       e.preventDefault();
-                      navigate("/brands#portmeirion");
-                    }}> PORTMEIRION
-                  </a>
-                </li>
-                <li>
-                  <a href="/brands#lecreuset" onClick={(e) => {
-                      e.preventDefault();
-                      navigate("/brands#lecreuset");
-                    }}> LE CREUSET
-                  </a>
-                </li>
-                <li>
-                  <a href="/brands#smeg" onClick={(e) => {
-                      e.preventDefault();
-                      navigate("/brands#smeg");
-                    }}> SMEG
-                  </a>
-                </li>
-                <li>
-                  <a href="/brands#staub" onClick={(e) => {
-                      e.preventDefault();
-                      navigate("/brands#staub");
-                    }}> STAUB
-                  </a>
-                </li>
+                      navigate(`/brands#${id}`);
+                    }}>
+                      {id.toUpperCase()}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </li>
 
-            {/* Group 3 */}
-            <li className={`menu-item ${isActive("/discovery") || location.pathname.startsWith("/discovery") ? "active" : ""}`}>
-              <Link to="/discovery">DISCOVERY</Link>
+            {/* DISCOVERY */}
+            <li className={`menu-item ${isActive("/discovery") ? "active" : ""}`}>
+              <a href="/discovery" onClick={(e) => {
+                e.preventDefault();
+                navigate("/discovery");
+              }}>DISCOVERY</a>
               <ul className="submenu">
-              <li>
-                  <a href="/discovery#review" onClick={(e) => {
+                {["review", "about"].map((id) => (
+                  <li key={id} className={isActive("/discovery", id) ? "active" : ""}>
+                    <a href={`/discovery#${id}`} onClick={(e) => {
                       e.preventDefault();
-                      navigate("/discovery#review");
-                    }}> REVIEW
-                  </a>
-                </li>
-                <li>
-                  <a href="/discovery" onClick={(e) => {
-                      e.preventDefault();
-                      navigate("/discovery#about");
-                    }}> ABOUT
-                  </a>
-                </li>
-                {/* <li>{scrollLink("#contact", "REVIEW")}</li> */}
+                      navigate(`/discovery#${id}`);
+                    }}>
+                      {id.toUpperCase()}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </li>
+
           </ul>
         </div>
       </div>
